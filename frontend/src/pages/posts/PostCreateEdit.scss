@@ -1,0 +1,103 @@
+@use "@/styles/variables" as *;
+
+.post-create,
+.post-edit {
+    .post-form {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $gray-200;
+        padding: $space-lg;
+        border-radius: $r-lg;
+
+        .post-card {
+            display: flex;
+            flex-direction: column;
+            gap: $space-md;
+
+
+            .input-field {
+                border: 1px solid $gray-200;
+                padding: 0 $space-md;
+                height: 44px;
+                border-radius: $r-sm;
+                color:$gray-800;
+
+                &:focus {
+                    border-color: rgba($purple, $alpha: 0.55);
+                    background: $bg-hover;
+                    box-shadow: 0 0 0 2px rgba($color: $purple, $alpha: .12);
+                }
+
+                &::placeholder {
+                    color: rgba($color: $bg, $alpha: .45)
+                }
+            }
+
+            .post-field {
+                display: flex;
+                flex-direction: column;
+                gap: $space-md;
+
+                .post-label {
+                    font-size: $text-sm;
+                    color: $gray-600;
+                    font-weight: $fw-medium;
+                }
+
+                .post-input-wrap {
+                    width: 100%;
+
+                    select {
+                        width: 100%;
+                        border: 1px solid $gray-200;
+                        padding: 0 $space-md;
+                        height: 44px;
+                        border-radius: $r-sm;
+                    }
+
+                    .post-textarea {
+                        border: 1px solid $gray-200;
+                        padding: 0 $space-md;
+                        height: 44px;
+                        border-radius: $r-sm;
+                        width: 100%;
+                        min-height: 160px;
+                    }
+                }
+            }
+      
+            .post-upload-card {
+                border: 1px solid $gray-200;
+                padding:  $space-md;
+                border-radius: $r-sm;
+                background-color: $gray-50;
+
+                .post-upload-placeholder{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    gap: $space-md;
+                    cursor: pointer;
+                    .post-uppload-input {
+                        display: none;
+                    }
+                    .post-upload-title{
+                        font-size: $text-md;
+                        font-weight: $fw-medium;
+                        color:$gray-700
+                    }
+                }
+            }
+            .post-actions {
+                display: flex;
+                justify-content: space-between;
+                gap:$space-md;
+                .btn {
+                    flex: 1;
+                }
+            }
+        }
+
+    }
+}

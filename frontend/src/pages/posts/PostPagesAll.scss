@@ -1,0 +1,89 @@
+@use "@/styles/variables" as *;
+.post-section{
+    .inner {
+        max-width: $container-md;
+        .post-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: $space-lg;
+            .post-title {
+                font-size: $text-xl;
+                font-weight: $fw-bold;
+
+            }
+
+            .btn.primary {
+                width: auto;
+            }
+        }
+    }
+
+    &.post-detail {
+        .inner {
+            .post-card{
+                margin-top: $space-xl;
+                display: flex;
+                flex-direction: column;
+                gap: $space-lg;
+                border:1px solid $gray-200;
+                padding:$space-lg;
+                border-radius: $r-md;
+                color:$bg;
+                
+                .post-card-title{
+                    font-size: $text-xl;
+                    margin: $space-md 0;
+                }
+                .post-card-content{
+                    min-height: 200px;
+                    background-color: $gray-50;
+                    padding:$space-md;
+                    border-radius: $r-sm;
+                }
+
+                .img-wrap{
+                    margin: $space-md 0;
+                }
+            }
+            .btn-wrap {
+                margin-top: $space-xl;
+                display: flex;
+                justify-content: space-between;
+                gap: $space-md;
+                .btn {
+                    flex: 1;
+                }
+            }
+        }
+    }
+    &.post-all {
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: $space-xl;
+            gap:$space-md;
+            align-items: center;
+
+            button {
+                background-color: $gray-200;
+                border-radius: $r-xs;
+                padding:$space-sm
+            }
+            ul {
+                display: flex;
+                gap:$space-md;
+                li{
+                    cursor: pointer;
+                    padding:$space-sm;
+
+                    &:hover{
+                        color:$fg;
+                        font-weight: $fw-bold;
+                        background-color: $gray-900;
+                    }
+                }
+            }
+        }
+    }
+}

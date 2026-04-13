@@ -1,0 +1,104 @@
+@use "@/styles/variables" as *;
+
+.tags {
+    display: flex;
+    gap: $space-sm;
+    margin-top: $space-xl;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .post-tag {
+        display: inline-flex;
+        background-color: $gray-200;
+        padding: $space-sm $space-md;
+        gap: $space-sm;
+
+        border-radius: $r-lg;
+        align-items: center;
+
+        .post-tag-delete {
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0 $space-sm;
+            background-color: transparent;
+            font-size: 10px;
+        }
+    }
+
+    .btn.post-tag-add {
+        border: 1px solid $gray-200;
+        padding: $space-sm $space-md;
+        color: $gray-500;
+        gap: $space-md;
+
+    }
+
+    .post-tag-input {
+        border-radius: $r-lg;
+        padding: $space-sm $space-md;
+        min-width: 150px;
+        border: 1px solid $gray-200;
+    }
+}
+
+
+.post-list {
+    margin-top: $space-xl;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+}
+
+.post-card article {
+    border: 1px solid $gray-100;
+    display: flex;
+    padding: $space-lg;
+    border-radius: $r-md;
+    color: $bg;
+    gap: $space-lg;
+    justify-content: space-between;
+
+    &:hover {
+        background-color: $purple-3;
+    }
+
+    .post-card-body {
+        flex: 1;
+
+        .post-category {
+            color: $purple;
+            font-weight: $fw-bold;
+        }
+
+        .post-title {
+            margin: $space-md 0;
+            font-size: $text-lg;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; // 줄 수
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-content {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; // 줄 수
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: $space-md;
+        }
+    }
+
+    .img-wrap {
+        background-color: $gray-50;
+        height: 200px;
+        width: 300px;
+        overflow: hidden;
+        border-radius: $r-sm;
+
+        img {
+            height: 100%;
+        }
+    }
+
+}
