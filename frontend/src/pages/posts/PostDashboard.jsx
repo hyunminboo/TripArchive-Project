@@ -58,32 +58,37 @@ const PostDashboard = () => {
         console.log('새 메모 작성')
         navigate('/app/posts/new')
     }
-    return (
+   return (
         <section className='page post-section'>
             <div className="inner">
-                <PostHeader
-                    onClick={handleCreatePost}
-                    title='게시글을 작성하세요'
-                    showButton
-                    buttonText="작성하기"
-                    buttonClass="primary"
-                />
-                <div className="input-post">
-                    <Input
-                        placeholder="게시글 제목 또는 내용을 검색하세요"
-                        value={searchKeyword}
-                        onChange={(e) => setSearchKeyword(e.target.value)}
+                
+                {/* 1. 검색창과 버튼을 한 줄로 묶는 컨테이너 */}
+                <div className="top-action-bar">
+                    <div className="input-post">
+                        <Input
+                            placeholder="다녀온 여행지 검색" // 텍스트 변경
+                            value={searchKeyword}
+                            onChange={(e) => setSearchKeyword(e.target.value)}
+                        />
+                    </div>
+                    <Button 
+                        text="새 메모 작성" // 텍스트 변경
+                        className="brown-btn" // SCSS에서 제어할 전용 클래스 추가
+                        onClick={handleCreatePost} 
                     />
                 </div>
-                <div className="tags-wrapper">
 
+                {/* 2. 태그 영역 */}
+                <div className="tags-wrapper">
                     <TagFilterBar
                         tags={tags}
                         selectedTag={selectedTag}
                         onChangeTag={setSelectedTag}
                     />
-                    <Button text="전체 게시글 보기" className="wh" />
+                    {/* (참고) 캡처 이미지에는 '전체 게시글 보기' 버튼이 없으므로 제거하거나 주석 처리하셔도 좋습니다. */}
                 </div>
+
+                {/* 3. 게시글 리스트 영역 */}
                 <PostList posts={filteredPosts.slice(0,3)} />
             </div>
         </section>

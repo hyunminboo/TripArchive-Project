@@ -1,37 +1,58 @@
-import React ,{createContext, useContext,useMemo,useState} from 'react'
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { getMe } from '../api/auth.api'
+
+const AuthCtx = createContext(null)
+export function AuthProvider({ children }) {
+    const [member, setMember] = useState(null)
+    const [isReady, setIsReady] = useState(false)
+
+    useEffect(() => {
+        let mounted = true
+        const bootstrapAuth = async () => {
+            try {
+                const data = await getMe()
+                if (mounted) {
+                    setMember(data)
+                }
+            } catch {
+                if (mounted) {
+                    setMember(null)
+                }
+            } finally {
+                if (mounted) {
+                    setIsReady(true)
+                }
+            }
+        }
+        bootstrapAuth()
+        return () => {
+            mounted = false
+        }
+    }, [])
 
 
-const AuthCtx =createContext(null)
+    const login = (memberData) => {
+        setMember(memberData)
+    }
 
-export function AuthProvider({children}){
-  const [token, setToken]=useState(localStorage.getItem('accessToken'))
+    const logout = () => {
+        setMember(null)
+        s
+    }
 
+    const value = useMemo(() => ({
+        member,
+        isReady,
+        isAuthed: !!member,
+        login,
+        logout
 
-  const login =(accessToken)=>{
-    localStorage.setItem('accessToken',accessToken)
-  
-    setToken(accessToken)
-  }
+    }), [member, isReady])
 
-  const logout=()=>{
-    localStorage.removeItem("accessToken")
-
-    setToken(null)
-  }
-
-  const value =useMemo(()=>({
-    token,
-    isAuthed:!!token,
-    login,
-    logout
-
-  }),[token])
-
-  return <AuthCtx.Provider value={value}>
-    {children}
-  </AuthCtx.Provider>
-
+    return <AuthCtx.Provider value={value}>
+        {children}
+    </AuthCtx.Provider>
 }
 
 
-export const useAuth = ()=>useContext(AuthCtx)
+export const useAuth = () => useContext(AuthCtx)

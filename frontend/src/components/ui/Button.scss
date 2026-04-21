@@ -7,7 +7,7 @@
     position: relative;
     gap: $btn-gap;
     padding: $btn-padding-y $btn-padding-x;
-    border-radius: $r-lg;
+    border-radius: 12px;
     border: 1px solid transparent;
     font-size: $btn-font-size;
     font-weight: $btn-font-weight;
@@ -45,10 +45,10 @@
         }
     }
     &.primary {
-        background: linear-gradient(90deg,
-      $purple,
-      $purple-2 );
-      width: 100%;
+        background: rgb(0, 0, 0)  ;
+        color: white;
+      
+      
       &:hover {
         transform: translateY(0);
         box-shadow: $shadow-sm;

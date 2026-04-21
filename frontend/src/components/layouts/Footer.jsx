@@ -3,7 +3,7 @@ import './Footer.scss'
 const Footer = () => {
   return (
     <footer>
-      <p>© 2025 PhotoMemo · by LizB</p>
+      <p>© 2026 Trip · by BOOHYUNMIN</p>
     </footer>
   )
 }

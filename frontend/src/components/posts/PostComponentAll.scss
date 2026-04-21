@@ -13,7 +13,7 @@
         padding: $space-sm $space-md;
         gap: $space-sm;
 
-        border-radius: $r-lg;
+        border-radius: 10px;
         align-items: center;
 
         .post-tag-delete {
@@ -35,7 +35,7 @@
     }
 
     .post-tag-input {
-        border-radius: $r-lg;
+        border-radius: 10px;
         padding: $space-sm $space-md;
         min-width: 150px;
         border: 1px solid $gray-200;
@@ -54,20 +54,20 @@
     border: 1px solid $gray-100;
     display: flex;
     padding: $space-lg;
-    border-radius: $r-md;
+    border-radius: 10px;
     color: $bg;
     gap: $space-lg;
     justify-content: space-between;
 
     &:hover {
-        background-color: $purple-3;
+        background-color: gray;
     }
 
     .post-card-body {
         flex: 1;
 
         .post-category {
-            color: $purple;
+            color: black;
             font-weight: $fw-bold;
         }
 

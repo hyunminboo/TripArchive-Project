@@ -1,5 +1,11 @@
 @use "@/styles/variables" as *;
-header {
+
+.main-header {
+    background-image: url('/images/Landingbg.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
     .inner {
         max-width: $container-lg;
         display: flex;
@@ -14,9 +20,11 @@ header {
             align-items: center;
             
             ul{
-                
                 display: flex;
             }
+        }
+        .btn_radius {
+            border: 1px solid white;
         }
     }
 }
