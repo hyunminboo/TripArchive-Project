@@ -91,12 +91,12 @@ const PostDetail = () => {
             text="게시글 삭제하기"
             className="delete bl"
             onClick={handlePostDelete}
-            icons />
+             />
           <Button
             text="게시글 수정하기"
             className="edit bl"
             onClick={() => { navigate(`/app/posts/${id}/edit`) }}
-            icons />
+             />
         </div>
       </div>
     </section>

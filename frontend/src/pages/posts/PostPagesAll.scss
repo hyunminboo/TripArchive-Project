@@ -125,12 +125,13 @@
                 gap: $space-md;
                 .btn {
                     flex: 1;
+                    background-color: $gray-600;
                 }
             }
         }
     }
 
-    /* 기존 전체 보기 하단 버튼/페이지네이션 영역 (구조 유지) */
+    
     &.post-all {
         .btn-wrap {
             display: flex;
