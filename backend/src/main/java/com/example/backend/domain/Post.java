@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -42,7 +44,15 @@ public class Post {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
-    public Post(PostCategory category, String title, String content,String imageUrl, Member member) {
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "post_tags",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private Set<Tag> tags = new HashSet<>();
+
+    public Post(PostCategory category, String title, String content, String imageUrl, Member member) {
         this.category = category;
         this.title = title;
         this.content = content;
@@ -60,6 +70,13 @@ public class Post {
         this.updatedAt = LocalDateTime.now();
     }
 
-}
+    public void  updateTags(Set<Tag> tags){
+        this.tags.clear();
+        if(tags!=null){
+            this.tags.addAll(tags);
+        }
+        this.updatedAt=LocalDateTime.now();
+    }
 
+}
 

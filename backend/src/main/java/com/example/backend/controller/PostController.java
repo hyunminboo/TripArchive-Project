@@ -7,6 +7,7 @@ import com.example.backend.service.PostService;
 import com.example.backend.web.dto.CreatePostRequest;
 import com.example.backend.web.dto.PostResponse;
 import com.example.backend.web.dto.UpdatePostRequest;
+import com.example.backend.web.dto.UpdatePostTagsRequest;
 
 import java.util.List;
 
@@ -40,6 +41,15 @@ public class PostController {
             HttpSession session
     ) {
         return postService.update(id, request, session);
+    }
+
+    @PatchMapping("/{id}/tags")
+    public PostResponse updateTags(
+            @PathVariable Long id,
+            @RequestBody UpdatePostTagsRequest request,
+            HttpSession session
+    ){
+        return postService.updateTags(id, request, session);
     }
 
     @DeleteMapping("/{id}")

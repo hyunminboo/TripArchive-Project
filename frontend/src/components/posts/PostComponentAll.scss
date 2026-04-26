@@ -58,9 +58,13 @@
     color: $bg;
     gap: $space-lg;
     justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    
+    
 
     &:hover {
-        background-color: gray;
+        transform: scale(1.01);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .post-card-body {
