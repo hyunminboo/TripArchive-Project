@@ -2,19 +2,17 @@ package com.example.backend.domain;
 
 public enum PostCategory {
 
-    DAILY("일상"),
-    HOBBY("취미"),
-    TRAVEL("여행"),
-    WORK("업무"),
-    STUDY("공부"),
-    ETC("기타");
+    Europe("유럽"),
+    Asia("아시아"),
+    Africa("아프리카"),
+    NorthAmerica("북아메리카"),
+    SouthAmerica("남아메리카"),
+    Antarctica("남극");
+
     private final String label;
 
     PostCategory(String label) {
         this.label = label;
     }
 
-    public String getLabel() {
-        return label;
-    }
 }

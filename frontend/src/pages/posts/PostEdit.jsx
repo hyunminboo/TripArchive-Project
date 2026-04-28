@@ -14,7 +14,7 @@ const PostEdit = () => {
   const navigate = useNavigate()
 
 
-  const [category, setCategory] = useState('DAILY')
+  const [category, setCategory] = useState('Europe')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [tags, setTags] = useState([])
@@ -51,7 +51,7 @@ const PostEdit = () => {
       console.log(res)
       const post = res?.data ?? res
 
-      setCategory(post?.category ?? 'DAILY')
+      setCategory(post?.category ?? 'Europe')
       setTitle(post?.title ?? '')
       setContent(post?.content ?? '')
       setImageUrl(post?.imageUrl ?? null)

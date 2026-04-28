@@ -71,11 +71,7 @@
             margin-bottom: $space-xl;
 
             button, .tag-item {
-                background-color: $gray-100;
-                color: #4A3671; // 보라색 글씨
                 border: none;
-                padding: 6px 16px;
-                border-radius: 20px; 
                 font-size: $text-sm;
                 font-weight: $fw-bold;
                 cursor: pointer;

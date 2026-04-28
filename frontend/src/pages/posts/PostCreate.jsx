@@ -14,7 +14,7 @@ const PostCreate = () => {
 
   const navigate = useNavigate()
 
-  const [category, setCategory] = useState('DAILY')
+  const [category, setCategory] = useState('Europe')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [tags, setTags] = useState([])

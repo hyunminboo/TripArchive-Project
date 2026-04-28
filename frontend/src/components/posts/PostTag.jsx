@@ -4,11 +4,13 @@ import { getTagColor } from '@/hooks/useTagColor'
 const PostTag = ({ tag ,onClick}) => {
   return (
     <span className='post-tag'
-    style={{backgroundColor:getTagColor(tag)}}
+    style={{
+    backgroundColor: '#ffffff',
+    border: '1px solid #d1d5db'
+  }}
     >
       <span>
-
-        {tag}
+      {tag}
       </span>
       <button 
       className='post-tag-delete' 

@@ -4,7 +4,7 @@ import './PostComponentAll.scss'
 const TagFilterBar = ({ tags }) => {
   return (
     <div className='tags'>
-      <span>#tag:</span>
+     
       {tags.map((tag, i) => (
 
         <PostTag
