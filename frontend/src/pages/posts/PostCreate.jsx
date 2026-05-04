@@ -102,7 +102,7 @@ const PostCreate = () => {
 
     try {
        const presigned = await uploadImage(file)
-      setImageUrl(presigned.fileName)
+      setImageUrl(presigned.fileName ?? presigned.fileUrl ?? null)
 
     } catch (error) {
       console.error('이미지 업로드 실패',error)
