@@ -16,7 +16,8 @@ const PostCard = ({ post }) => {
                     </div>
                 </div>
                 <div className="img-wrap">
-                    <img src={post.thumbnail || '/images/placeholder.png'} alt={post.title} />
+                    {/* ✅ post.thumbnail → post.imageUrl 수정 */}
+                    <img src={post.imageUrl || '/images/placeholder.png'} alt={post.title} />
                 </div>
             </article>
         </Link>

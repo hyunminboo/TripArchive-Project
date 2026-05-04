@@ -14,7 +14,7 @@ const PostCreate = () => {
 
   const navigate = useNavigate()
 
-  const [category, setCategory] = useState('Europe')
+  const [category, setCategory] = useState('DAILY')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [tags, setTags] = useState([])
@@ -101,9 +101,10 @@ const PostCreate = () => {
     if(!file) return
 
     try {
-       const presigned = await uploadImage(file)
+      const presigned = await uploadImage(file)
+      console.log('presigned 전체:', JSON.stringify(presigned))
       setImageUrl(presigned.fileName ?? presigned.fileUrl ?? null)
-
+      console.log('저장된 imageUrl:', presigned.fileName ?? presigned.fileUrl ?? null)
     } catch (error) {
       console.error('이미지 업로드 실패',error)
     }finally{

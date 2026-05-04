@@ -14,7 +14,7 @@ const PostEdit = () => {
   const navigate = useNavigate()
 
 
-  const [category, setCategory] = useState('Europe')
+  const [category, setCategory] = useState('DAILY')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [tags, setTags] = useState([])
@@ -30,19 +30,6 @@ const PostEdit = () => {
     navigate(-1)
   }
 
-
-  const loadMyTags = async () => {
-    const res = await getMyTags()
-    const list = Array.isArray(res) ? res : res?.data ?? []
-
-    setTags(
-      list.map((t) => ({
-        id: t.id,
-        label: typeof t === 'string' ? t : t.label ?? t.name
-      }))
-    )
-  }
-
   const loadPostDetail = async () => {
     try {
       setIsLoading(true)
@@ -51,7 +38,7 @@ const PostEdit = () => {
       console.log(res)
       const post = res?.data ?? res
 
-      setCategory(post?.category ?? 'Europe')
+      setCategory(post?.category ?? 'DAILY')
       setTitle(post?.title ?? '')
       setContent(post?.content ?? '')
       setImageUrl(post?.imageUrl ?? null)
@@ -135,22 +122,16 @@ const PostEdit = () => {
       handleAddTag()
     }
   }
+
   const handleUploadImage = async (e) => {
     const file = e.target.files?.[0]
 
     if (!file) return
 
     try {
-      const res = await uploadImage(file)
-
-      const uploaded = res?.data ?? res
-
-      setImageUrl(
-        uploaded.fileName ??
-        uploaded.fileUrl ??
-        uploaded.imageUrl ??
-        null
-      )
+      const presigned = await uploadImage(file)
+      // ✅ fileName에 실제 S3 전체 URL이 담겨 있음
+      setImageUrl(presigned.fileName ?? presigned.fileUrl ?? null)
 
     } catch (error) {
       console.error('이미지 업로드 실패', error)
