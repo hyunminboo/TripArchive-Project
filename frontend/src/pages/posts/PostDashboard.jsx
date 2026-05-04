@@ -66,7 +66,7 @@ const PostDashboard = () => {
                 <div className="top-action-bar">
                     <div className="input-post">
                         <Input
-                            placeholder="다녀온 여행지 검색" 
+                            placeholder="여행지 검색" 
                             value={searchKeyword}
                             onChange={(e) => setSearchKeyword(e.target.value)}
                         />

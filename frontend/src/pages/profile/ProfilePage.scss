@@ -1,0 +1,18 @@
+@use "@/styles/variables" as *;
+
+
+.profile-section{
+    .inner {
+        max-width: $container-md;
+        main {
+            display: flex;
+            gap: $space-md;
+            .left {
+                min-width: $container-xs;
+                display: flex;
+                flex-direction: column;
+                gap: $space-md;
+            }
+        }
+    }
+}

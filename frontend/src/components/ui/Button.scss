@@ -56,17 +56,17 @@
     }
     &.delete,
     &.cancel {
-        background-color: $error;
+        background-color: $gray-700;
     }
     &.save {
-        background-color: $success;
+        background-color: $gray-700;
     }
     &.back,
     &.bl {
         color:$gray-900
     }
     &.edit {
-        background-color: $warning;
+        background-color: $gray-700;
     }
     
 

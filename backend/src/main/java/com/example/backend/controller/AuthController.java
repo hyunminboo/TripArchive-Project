@@ -2,10 +2,13 @@ package com.example.backend.controller;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.backend.service.LoginService;
 import com.example.backend.web.dto.LoginRequest;
 import com.example.backend.web.dto.MemberResponse;
+import com.example.backend.web.dto.UpdateProfileRequest;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,8 +22,14 @@ public class AuthController {
     }
 
     @GetMapping("/me")
-    public MemberResponse memberResponse(HttpSession session){
-        return loginService.me(session);
+    public ResponseEntity<MemberResponse> memberResponse(HttpSession session) {
+        return loginService.me(session)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+    }
+    @PatchMapping("/me")
+    public MemberResponse updateMe(@RequestBody UpdateProfileRequest request, HttpSession session){
+        return loginService.updateMe(session,request);
     }
 
     @PostMapping("/logout")

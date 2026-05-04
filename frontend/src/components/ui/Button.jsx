@@ -24,7 +24,6 @@ const Button = ({
         backIconSrc && <img src={backIconSrc} />
       }
       {text}
-      {icons && <img src='/images/arrow.svg' />}
     </button>
   )
 }

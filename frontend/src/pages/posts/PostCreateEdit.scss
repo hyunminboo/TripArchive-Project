@@ -23,9 +23,9 @@
                 color:$gray-800;
 
                 &:focus {
-                    border-color: rgba($purple, $alpha: 0.55);
+                    border-color: rgba($gray-400, $alpha: 0.55);
                     background: $bg-hover;
-                    box-shadow: 0 0 0 2px rgba($color: $purple, $alpha: .12);
+                    box-shadow: 0 0 0 2px rgba($color: $gray-400, $alpha: .12);
                 }
 
                 &::placeholder {

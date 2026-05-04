@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.backend.domain.Member;
 import com.example.backend.domain.MemberStatus;
 import com.example.backend.repository.MemberRepository;
+import com.example.backend.web.dto.MemberResponse;
+import com.example.backend.web.dto.UpdateProfileRequest;
 
 import java.util.List;
 
@@ -67,6 +69,26 @@ public class MemberService {
     }
 
 
+    public MemberResponse updateProfile(Long memberId, UpdateProfileRequest request){
+        if(request.name()==null|| request.name().isBlank()){
+            throw new IllegalArgumentException("이름을 입력해 주세요");
+        }
+        Member member = findById(memberId);
+        String trimmedName = request.name().trim();
+        String newPhone = request.phone()==null || request.phone().isBlank()?
+                null
+                : request.phone().trim();
+
+        if (newPhone != null
+                && !newPhone.equals(member.getPhone())
+                && memberRepository.existsByPhoneAndIdNot(newPhone, memberId)
+        ) {
+            throw new IllegalArgumentException("이미 사용중인 전화번호 입니다.");
+        }
+        member.updateProfile(trimmedName, newPhone);
+        return MemberResponse.from(member);
+
+    }
 
 
 

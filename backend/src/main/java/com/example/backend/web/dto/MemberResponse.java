@@ -2,8 +2,10 @@ package com.example.backend.web.dto;
 
 import com.example.backend.domain.Member;
 import com.example.backend.domain.MemberStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public record MemberResponse (
         Long id,
@@ -25,4 +27,6 @@ public record MemberResponse (
                 m.getCreatedAt()
         );
     }
+
+
 }

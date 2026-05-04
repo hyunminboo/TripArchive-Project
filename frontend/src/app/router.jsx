@@ -11,10 +11,11 @@ import PostAll from '../pages/posts/PostAll'
 import PostEdit from '../pages/posts/PostEdit'
 import PostCreate from '../pages/posts/PostCreate'
 import PostDetail from '../pages/posts/PostDetail'
-// import Profile from '../pages/profile/Profile'
+import Setting from '../pages/setting/Setting'
+import Profile from '../pages/profile/Profile'
 export const router = createBrowserRouter([
   {
-    // 공개영역 부분 
+    // 공개영역
     element: <PublicLayout />,
     children: [
       { path: '/', element: <Landing /> },
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       { path: '/signup', element: <Signup /> }
     ]
   }, {
-    // 보호영역 부분
+    // 보호영역
     path: '/app',
     element: (
       <ProtectRoute>
@@ -35,8 +36,8 @@ export const router = createBrowserRouter([
       { path:'posts/new', element: <PostCreate /> },
       { path:'posts/:id', element: <PostDetail /> },
       { path:'posts/:id/edit', element: <PostEdit /> },
-      // { path:'profile', element: <Profile /> },
-      // { path:'setting', element: <Setting /> },
+      { path:'profile', element: <Profile /> },
+      { path:'setting', element: <Setting /> },
     ]
   }
 ])

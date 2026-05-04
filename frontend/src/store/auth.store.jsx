@@ -37,7 +37,6 @@ export function AuthProvider({ children }) {
 
     const logout = () => {
         setMember(null)
-        s
     }
 
     const value = useMemo(() => ({
