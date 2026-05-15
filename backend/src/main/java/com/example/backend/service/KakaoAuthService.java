@@ -32,7 +32,6 @@ public class KakaoAuthService {
                 .fromUriString("https://kauth.kakao.com/oauth/authorize")
                 .queryParam("client_id",kakaoProperties.getClientId())
                 .queryParam("redirect_uri",kakaoProperties.getRedirectUri())
-                .queryParam("response_uri",kakaoProperties.getRedirectUri())
                 .queryParam("response_type","code")
                 .build()
                 .toString();
@@ -73,7 +72,7 @@ public class KakaoAuthService {
     private KakaoUserResponse requestUserInfo(String accessToken){
         return  restClient.get()
                 .uri(kakaoProperties.getUserInfoUri())
-                .header("Authorization","Bearer"+accessToken)
+                .header("Authorization","Bearer " + accessToken)
                 .retrieve()
                 .body(KakaoUserResponse.class);
     }

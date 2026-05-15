@@ -75,7 +75,7 @@
 
       .auth-btn-wrap {
         margin-top: $space-xl;
-        
+
         button.primary {
           width: 100%;
           padding: 10px;
@@ -125,6 +125,56 @@
       margin-top: $space-sm;
       text-align: center;
       font-size: 0.85rem;
+    }
+
+    // 카카오 구분선
+    .kakao-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      margin: $space-lg 0 $space-md;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+    .kakao-login-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: $space-sm;
+    }
+
+    .btn-kakao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #fee500;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        background: #f0d900;
+        transform: scale(1.05);
+      }
+      &:active {
+        background: #e6cf00;
+        transform: scale(0.97);
+      }
     }
   }
 }
