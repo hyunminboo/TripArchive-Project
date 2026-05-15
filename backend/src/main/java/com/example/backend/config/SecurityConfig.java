@@ -27,6 +27,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers("/members","/members/**").permitAll()
                                 .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/api/auth/kakao", "/api/auth/kakao/callback").permitAll()
+                                .requestMatchers("/api/auth/kakao/**").permitAll()
 //                        .anyRequest().authenticated()
                                 .anyRequest().permitAll()
                 )
