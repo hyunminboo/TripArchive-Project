@@ -1,19 +1,8 @@
-import React from 'react'
-import PostTag from './PostTag'
-import './PostComponentAll.scss'
-const TagFilterBar = ({ tags }) => {
-  return (
-    <div className='tags'>
-     
-      {tags.map((tag, i) => (
+import React from "react";
+import PostTag from "./PostTag";
+import "./PostComponentAll.scss";
+const TagFilterBar = ({ tags, selectedTag, onChangeTag }) => {
+  return <div className="tags"></div>;
+};
 
-        <PostTag
-          key={`${tag}-${i}`}
-          tag={tag}
-        />
-      ))}
-    </div>
-  )
-}
-
-export default TagFilterBar
+export default TagFilterBar;

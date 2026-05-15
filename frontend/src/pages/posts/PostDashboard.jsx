@@ -39,6 +39,17 @@ const PostDashboard = () => {
         }));
 
         setPosts(mappedPosts);
+
+        // ✅ 태그 추출 추가
+        const uniqueTags = [
+          "전체",
+          ...new Set(
+            mappedPosts.flatMap((post) =>
+              post.tags.map((tag) => tag?.name ?? tag),
+            ),
+          ),
+        ];
+        setTags(uniqueTags);
       } catch (error) {
         setFetchError(
           error?.response?.data?.message || error.message || "게시글 조회 실패",

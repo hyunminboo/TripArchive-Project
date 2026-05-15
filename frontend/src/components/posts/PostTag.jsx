@@ -1,26 +1,23 @@
+import React from "react";
 
-import React from 'react'
-import { getTagColor } from '@/hooks/useTagColor'
-const PostTag = ({ tag ,onClick}) => {
+const PostTag = ({ tag, onClick, showDelete = true }) => {
   return (
-    <span className='post-tag'
-    style={{
-    backgroundColor: '#ffffff',
-    border: '1px solid #d1d5db'
-  }}
-    >
-      <span>
-      {tag}
-      </span>
-      <button 
-      className='post-tag-delete' 
-      onClick={(e)=>{
-        e.preventDefault()
-        e.stopPropagation()
-        onClick?.()
-        }}>X</button>
+    <span className="post-tag" style={{ border: "1px solid currentColor" }}>
+      <span>{tag}</span>
+      {showDelete && (
+        <button
+          className="post-tag-delete"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClick?.();
+          }}
+        >
+          X
+        </button>
+      )}
     </span>
-  )
-}
+  );
+};
 
-export default PostTag
+export default PostTag;
