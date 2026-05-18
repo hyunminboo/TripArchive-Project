@@ -5,7 +5,9 @@ import Input from "@/components/ui/Input";
 import { useState, useEffect } from "react";
 import "./PostPagesAll.scss";
 import { getPosts } from "@/api/post.api";
-import { useNavigate, useParams } from "react-router-dom";
+import { logout as logoutApi } from "@/api/auth.api";
+import { useAuth } from "@/store/auth.store";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import useFilteredPosts from "../../hooks/useFilteredPosts";
 
 const PostDashboard = () => {
@@ -17,6 +19,17 @@ const PostDashboard = () => {
 
   const navigate = useNavigate();
   const { id: activeId } = useParams();
+  const { logout, member } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logoutApi();
+      logout();
+      navigate("/");
+    } catch (error) {
+      alert(error.message || "로그아웃 오류");
+    }
+  };
 
   useEffect(() => {
     setFetchError("");
@@ -39,8 +52,6 @@ const PostDashboard = () => {
         }));
 
         setPosts(mappedPosts);
-
-        // ✅ 태그 추출 추가
         const uniqueTags = [
           "전체",
           ...new Set(
@@ -94,6 +105,25 @@ const PostDashboard = () => {
             ))
           )}
         </ul>
+
+        <div className="sidebar-footer">
+          <button
+            className="sidebar-footer-btn"
+            onClick={() => navigate("/app/profile")}
+          >
+            <span className="sidebar-avatar">
+              {(member?.nickname ?? member?.name ?? "?")
+                .charAt(0)
+                .toUpperCase()}
+            </span>
+            <span className="sidebar-footer-label">
+              {member?.nickname ?? member?.name ?? "내 프로필"}
+            </span>
+          </button>
+          <button className="sidebar-footer-btn logout" onClick={handleLogout}>
+            <span className="sidebar-footer-label">로그아웃</span>
+          </button>
+        </div>
       </aside>
 
       <section className="page post-section">

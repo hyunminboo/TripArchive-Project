@@ -11,12 +11,13 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    overflow-y: auto;
+    overflow: hidden;
     flex-shrink: 0;
   }
 
   .post-section {
     flex: 1;
+    height: 100vh;
     overflow-y: auto;
   }
 }
@@ -176,13 +177,13 @@
 
 .post-sidebar {
   width: 220px;
+  height: 100%;
 
   background-color: white;
   border-right: 1px solid $gray-200;
   padding: $space-lg $space-sm;
   display: flex;
   flex-direction: column;
-  gap: $space-sm;
   flex-shrink: 0;
 
   .sidebar-header {
@@ -190,6 +191,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 $space-sm $space-sm;
+    margin-bottom: $space-sm;
     border-bottom: 1px solid $gray-200;
 
     .sidebar-title {
@@ -217,6 +219,8 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    flex: 1;
+    overflow-y: hidden;
   }
 
   .sidebar-empty {
@@ -264,6 +268,72 @@
     .sidebar-item-tag {
       font-size: 11px;
       color: $gray-400;
+    }
+  }
+
+  /* ─── 사이드바 하단 프로필 / 로그아웃 ─── */
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: $space-sm;
+    border-top: 1px solid $gray-200;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .sidebar-footer-btn {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    width: 100%;
+    padding: $space-sm $space-sm;
+    border: none;
+    background: transparent;
+    border-radius: $r-sm;
+    cursor: pointer;
+    transition: background-color $ease-fast;
+    text-align: left;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &.logout:hover {
+      background-color: #fff0f0;
+
+      .sidebar-footer-label {
+        color: #e53e3e;
+      }
+    }
+
+    .sidebar-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: $gray-300;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $text-sm;
+      font-weight: $fw-bold;
+      flex-shrink: 0;
+      text-transform: uppercase;
+    }
+
+    .sidebar-footer-icon {
+      font-size: 16px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .sidebar-footer-label {
+      font-size: $text-sm;
+      color: $gray-600;
+      font-weight: $fw-medium;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

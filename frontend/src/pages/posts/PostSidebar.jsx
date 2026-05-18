@@ -24,7 +24,6 @@ const PostSidebar = () => {
             className="sidebar-item"
             onClick={() => navigate(`/app/posts/${post.id}`)}
           >
-            <span className="sidebar-item-title">{post.title}</span>
             {post.tags.length > 0 && (
               <span className="sidebar-item-tag">
                 #{post.tags[0]?.name ?? post.tags[0]}

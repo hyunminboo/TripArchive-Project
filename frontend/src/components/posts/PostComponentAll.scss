@@ -1,111 +1,107 @@
 @use "@/styles/variables" as *;
 
 .tags {
-    display: flex;
+  display: flex;
+  gap: $space-sm;
+  margin-top: $space-xl;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .post-tag {
+    display: inline-flex;
+
+    padding: $space-sm $space-md;
     gap: $space-sm;
-    margin-top: $space-xl;
+
+    border-radius: 10px;
     align-items: center;
-    flex-wrap: wrap;
 
-    .post-tag {
-        display: inline-flex;
-        
-        padding: $space-sm $space-md;
-        gap: $space-sm;
-
-        border-radius: 10px;
-        align-items: center;
-
-        .post-tag-delete {
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            padding: 0 $space-sm;
-            background-color: transparent;
-            font-size: 10px;
-        }
+    .post-tag-delete {
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      padding: 0 $space-sm;
+      background-color: transparent;
+      font-size: 10px;
     }
+  }
 
-    .btn.post-tag-add {
-        border: 1px solid $gray-200;
-        padding: $space-sm $space-md;
-        color: $gray-500;
-        gap: $space-md;
+  .btn.post-tag-add {
+    border: 1px solid $gray-200;
+    padding: $space-sm $space-md;
+    color: $gray-500;
+    gap: $space-md;
+  }
 
-    }
-
-    .post-tag-input {
-        border-radius: 10px;
-        padding: $space-sm $space-md;
-        min-width: 150px;
-        border: 1px solid $gray-200;
-    }
+  .post-tag-input {
+    border-radius: 10px;
+    padding: $space-sm $space-md;
+    min-width: 150px;
+    border: 1px solid $gray-200;
+  }
 }
 
-
 .post-list {
-    margin-top: $space-xl;
-    display: flex;
-    flex-direction: column;
-    gap: $space-xl;
+  margin-top: $space-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
 }
 
 .post-card article {
-    border: 1px solid $gray-100;
-    display: flex;
-    padding: $space-lg;
-    border-radius: 10px;
-    color: $bg;
-    gap: $space-lg;
-    justify-content: space-between;
-    transition: all 0.3s ease-in-out;
-    
-    
+  border: 1px solid $gray-100;
+  display: flex;
+  padding: $space-lg;
+  border-radius: 10px;
+  color: $bg;
+  gap: $space-lg;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
 
-    &:hover {
-        transform: scale(1.01);
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-card-body {
+    flex: 1;
+
+    .post-category {
+      color: black;
+      font-weight: $fw-bold;
     }
 
-    .post-card-body {
-        flex: 1;
-
-        .post-category {
-            color: black;
-            font-weight: $fw-bold;
-        }
-
-        .post-title {
-            margin: $space-md 0;
-            font-size: $text-lg;
-            display: -webkit-box;
-            -webkit-line-clamp: 1; // 줄 수
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .post-content {
-            display: -webkit-box;
-            -webkit-line-clamp: 2; // 줄 수
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: $space-md;
-        }
+    .post-title {
+      margin: $space-md 0;
+      font-size: $text-lg;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; // 줄 수
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .img-wrap {
-        background-color: $gray-50;
-        height: 200px;
-        width: 300px;
-        overflow: hidden;
-        border-radius: $r-sm;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .post-content {
+      display: inline-flex;
+      padding: 8px 16px;
+      gap: 8px;
+      border-radius: 10px;
+      align-items: center;
+      border: 1px solid $gray-200;
     }
+  }
 
+  .img-wrap {
+    background-color: $gray-50;
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+    border-radius: $r-sm;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
 }

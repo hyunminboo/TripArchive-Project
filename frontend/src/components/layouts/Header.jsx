@@ -1,31 +1,8 @@
 import React from "react";
 import "./Header.scss";
-import { Link, useNavigate } from "react-router-dom";
-import Button from "../ui/Button";
-import { logout as logoutApi } from "@/api/auth.api";
-import { useAuth } from "@/store/auth.store";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate();
-  const { logout } = useAuth();
-
-  const menus = [
-    {
-      name: "내 프로필",
-      link: "/app/profile",
-    },
-  ];
-
-  const handleLogout = async () => {
-    try {
-      await logoutApi();
-      logout();
-      navigate("/");
-    } catch (error) {
-      alert(error.message || "로그아웃 오류");
-    }
-  };
-
   return (
     <header className="main-header">
       <div className="inner">
@@ -34,25 +11,6 @@ const Header = () => {
             <img src="/images/logo.svg" alt="logo" />
           </Link>
         </h1>
-        <div className="right">
-          <ul>
-            {menus.map((menu, i) => (
-              <li key={i}>
-                <Button
-                  className="sq"
-                  onClick={() => navigate(menu.link)}
-                  text={menu.name}
-                />
-              </li>
-            ))}
-          </ul>
-          <Button
-            className="btn_radius"
-            text="로그아웃"
-            // backico='wh'
-            onClick={handleLogout}
-          />
-        </div>
       </div>
     </header>
   );
