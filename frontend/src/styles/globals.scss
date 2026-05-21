@@ -16,8 +16,8 @@ body {
 
 body {
   margin: 0;
-  color: $fg;
-  background: $bg;
+  color: $gray-900;
+  background: #ffffff;
   font-family:
     "Montserrat",
     sans-serif,
@@ -90,10 +90,10 @@ ul {
 }
 
 .page {
-  padding-top: calc(#{$header-h} + 28px);
+  padding-top: calc(28px + 28px);
   padding-bottom: 60px;
-  background-color: $fg;
-  color: $bg;
+  background-color: #ffffff;
+  color: $gray-900;
 }
 
 section {

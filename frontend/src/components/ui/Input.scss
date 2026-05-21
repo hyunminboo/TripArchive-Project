@@ -29,21 +29,3 @@
         }
     }
 }
-.input-post {
-    border-bottom: 1px solid black;
-    box-shadow: none;
-    .input-field {
-        caret-color: $gray-400;
-        font-size: $text-xl;
-        color: $gray-600;
-        
-        &::placeholder{
-            color:$gray-200;
-            font-size: $text-xl;
-        }
-        &:focus{
-            
-            box-shadow: none;
-        }
-    }
-}

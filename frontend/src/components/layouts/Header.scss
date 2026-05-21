@@ -1,20 +1,86 @@
 @use "@/styles/variables" as *;
 
 .main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-image: url("/images/Landingbg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   .inner {
-    max-width: 100%;
+    max-width: $container-md; // Same as .post-section .inner
+    margin: 0 auto; // Center it
+    padding-left: 30px; // Match left padding of post-section
     display: flex;
     justify-content: space-between;
-    padding: $space-lg 0;
-    padding-left: 40px;
+    align-items: center;
+    padding-top: 12px; 
+    padding-bottom: 12px; 
+  }
+  margin-bottom: 30px; // Push down the search bar
 
-    img {
-      width: 136px;
+  .header-actions {
+    flex: 0 0 136px;
+    display: flex;
+    justify-content: flex-end;
+
+    .header-new-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      
+      background: $theme-dark;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        transform: translateY(-2px);
+        background: $theme-dark-hover;
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow:
+            0 6px 20px rgba(0, 0, 0, 0.15),
+            0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      &:active {
+        transform: translateY(0px) scale(0.98);
+        box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.1);
+      }
     }
   }
+
+  .header-quote {
+    flex: 1;
+    font-size: $text-sm;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    font-weight: $fw-normal;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.5;
+    animation: quoteFade 1s ease;
+  }
 }
+
+@keyframes quoteFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

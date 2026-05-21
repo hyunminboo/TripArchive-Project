@@ -2,8 +2,10 @@
 
 .profile-card {
   flex: 1;
-  border: 1px solid $gray-200;
-  border-radius: $r-lg;
+  border: 1px solid rgba(220, 220, 230, 0.45);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border-radius: 16px;
   padding: $space-xl;
 
   &.profile-name-wrap {
@@ -16,10 +18,12 @@
     .profile-icon-wrap {
       width: 120px;
       height: 120px;
-      background-color: $gray-300;
-      align-content: center;
+      background: linear-gradient(135deg, $theme-accent-light, $theme-accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: $r-pill;
-      color: $fg;
+      color: white;
       text-transform: uppercase;
       font-size: $text-2xl;
     }

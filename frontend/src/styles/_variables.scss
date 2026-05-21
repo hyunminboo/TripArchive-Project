@@ -2,12 +2,12 @@
 // Color
 // =============================
 
-$bg: #07010f;
+$bg: #ffffff;
 $fg: rgb(255, 255, 255);
 $muted: rgba(255, 255, 255, 0.65);
 
-$purple: #8338EC;
-$purple-2: #B923FF;
+$purple: #8338ec;
+$purple-2: #b923ff;
 $purple-3: #f9ebff;
 
 $line: rgba(255, 255, 255, 0.14);
@@ -18,10 +18,20 @@ $success: #22c55e;
 $warning: #f59e0b;
 
 // =============================
+// Theme Variables
+// =============================
+$theme-bg: #fffcf0;
+$theme-dark: #332f2b;
+$theme-dark-hover: #4a443e;
+$theme-accent-light: #d4b872;
+$theme-accent-dark: #a38a54;
+$theme-text-muted: #8c8577;
+
+// =============================
 // Gray Scale
 // =============================
 
-$gray-50:  #fafafa;
+$gray-50: #fafafa;
 $gray-100: #f5f5f5;
 $gray-200: #e5e5e5;
 $gray-300: #d4d4d4;
@@ -37,7 +47,6 @@ $gray-900: #171717;
 
 $bg-soft: rgba(255, 255, 255, 0.04);
 $bg-hover: rgba(255, 255, 255, 0.08);
-
 
 // =============================
 // Radius
@@ -65,7 +74,6 @@ $shadow-intro: 0 10px 10px rgba(0, 0, 0, 0.747);
 $shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 $shadow-sm: 0 8px 10px rgba(0, 0, 0, 0.35);
 
-
 // =============================
 // Layout
 // =============================
@@ -78,7 +86,6 @@ $container-xs: 340px;
 $header-h: 64px;
 
 $section-gap: 120px;
-
 
 // =============================
 // Typography
@@ -95,14 +102,12 @@ $fw-normal: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-
 // =============================
 // Motion
 // =============================
 
 $ease: 0.25s ease;
 $ease-fast: 0.15s ease;
-
 
 // =============================
 // Z-index
@@ -111,7 +116,6 @@ $ease-fast: 0.15s ease;
 $z-header: 100;
 $z-modal: 1000;
 $z-toast: 2000;
-
 
 // =============================
 // Button

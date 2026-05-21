@@ -2,12 +2,21 @@
 
 .post-create,
 .post-edit {
+    .inner {
+        padding-left: 0;
+        padding-top: $space-xl;
+        padding-bottom: $space-xl;
+        margin: 0 auto;
+    }
+
     .post-form {
         display: flex;
         flex-direction: column;
-        border: 1px solid $gray-200;
+        border: 1px solid rgba(220, 220, 230, 0.45);
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         padding: $space-lg;
-        border-radius: $r-lg;
+        border-radius: 16px;
 
         .post-card {
             display: flex;
@@ -95,7 +104,6 @@
                 gap:$space-md;
                 .btn {
                     flex: 1;
-                    background-color: $gray-600;
                 }
             }
         }

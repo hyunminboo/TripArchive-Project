@@ -1,10 +1,10 @@
 @use "@/styles/variables" as *;
 
-
 footer {
-    background-color: $gray-300;
-    padding: $space-xl 0;
-    text-align: center;
-    color:$gray-900;
-    font-size: $text-lg;
+  background-color: $theme-dark;
+  padding: 24px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }

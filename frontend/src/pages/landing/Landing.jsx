@@ -13,7 +13,6 @@ const Landing = () => {
         <div className="t-wrap">
           <h2>
             <img src="/images/logo.svg" alt="logo" />
-           
             <NavLink to="/login" className="btn-link">
               <Button text="시작하기" className="intro" />
             </NavLink>

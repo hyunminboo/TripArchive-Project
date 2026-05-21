@@ -5,7 +5,6 @@ import Footer from '../components/layouts/Footer'
 const ProtectApp = () => {
   return (
     <>
-      <Header />
       <Outlet />
       <Footer />
     </>

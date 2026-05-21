@@ -1,7 +1,9 @@
 @use "@/styles/variables" as *;
 
 
-.profile-section{
+.page.profile-section {
+    background-color: $theme-bg !important;
+    min-height: 100vh;
     .inner {
         max-width: $container-md;
         main {
